@@ -80,8 +80,13 @@ public class XMLDSig {
     private static final String ENVELOPED_SIGNATURE_TRANSFORM_ALGORITHM = "http://www.w3.org/2000/09/xmldsig#enveloped-signature";
     // Canonicals (normalizes) a document. Preserves comments. E.g. removes line feeds, normalizes attributes, CDATA, etc.
     private static final String C14N_CANONICALIZATION_ALGORITHM = "http://www.w3.org/2006/12/xml-c14n11#WithComments";
-    private static final String SHA256_DIGEST_ALGORITHM = "http://www.w3.org/2001/04/xmlenc#sha256";
-    private static final String RSA_SHA512_SIGN_ALGORITHM = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha512";
+  /*  private static final String SHA256_DIGEST_ALGORITHM = "http://www.w3.org/2001/04/xmlenc#sha256";
+    private static final String RSA_SHA512_SIGN_ALGORITHM = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"*/;
+    // Установите алгоритмы для КриптоПРО JCP
+    private static final String JCP_PROVIDER_NAME = "JCP";
+    private static final String SHA256_DIGEST_ALGORITHM = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr3411";
+    private static final String RSA_SHA512_SIGN_ALGORITHM = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102001-gostr3411";
+
 
     private static final C14NMethodParameterSpec EMPTY_C14N_PARAMS = null;
     private static final DigestMethodParameterSpec EMPTY_DIGEST_PARAMS = null;
@@ -98,6 +103,7 @@ public class XMLDSig {
 
     public static void main(String[] args) {
         try {
+
             // Загрузите ваш сертификат и закрытый ключ здесь
             Certificate certificate = KeyFactory.getCertificate();
             PrivateKey privateKey = KeyFactory.getPrivateKey();
@@ -162,6 +168,8 @@ public class XMLDSig {
 
     private static SignedInfo createSignedInfo(XMLSignatureFactory xmlSignatureFactory) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException {
         CanonicalizationMethod c14nMethod = xmlSignatureFactory.newCanonicalizationMethod(C14N_CANONICALIZATION_ALGORITHM, EMPTY_C14N_PARAMS);
+        /*DigestMethod digestMethod = xmlSignatureFactory.newDigestMethod(SHA256_DIGEST_ALGORITHM, EMPTY_DIGEST_PARAMS);
+        SignatureMethod signMethod = xmlSignatureFactory.newSignatureMethod(RSA_SHA512_SIGN_ALGORITHM, EMPTY_SIGN_PARAMS);*/
         DigestMethod digestMethod = xmlSignatureFactory.newDigestMethod(SHA256_DIGEST_ALGORITHM, EMPTY_DIGEST_PARAMS);
         SignatureMethod signMethod = xmlSignatureFactory.newSignatureMethod(RSA_SHA512_SIGN_ALGORITHM, EMPTY_SIGN_PARAMS);
 
