@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"> 
+<SOAP-ENV:Header/> 
+<SOAP-ENV:Body> 
+<Process xmlns="http://service.pfr.socit.ru"> 
+<ns0:Message xmlns:ns0="http://smev.gosuslugi.ru/rev110801"> 
+<ns0:Date>2012-02-16+05:00</ns0:Date> 
+</ns0:Message> 
+<ns0:MessageData xmlns:ns0="http://smev.gosuslugi.ru/rev110801"> 
+<ns0:AppData> 
+<ns1:Type xmlns:ns1="http://data.service.pfr.socit.ru">REQUEST</ns1:Type> 
+<ns1:Properties xmlns:ns1="http://data.service.pfr.socit.ru"> 
+<ns1:Property> 
+<ns1:PropertyName>TYPE_QUERY</ns1:PropertyName> 
+<ns1:PropertyValue>111</ns1:PropertyValue> 
+</ns1:Property> 
+<ns1:Property> 
+<ns1:PropertyName>SECOND_NAME</ns1:PropertyName> 
+<ns1:PropertyValue>222</ns1:PropertyValue> 
+</ns1:Property> 
+<ns1:Property> 
+<ns1:PropertyName>FIRST_NAME</ns1:PropertyName> 
+<ns1:PropertyValue>333</ns1:PropertyValue> 
+</ns1:Property> 
+<ns1:Property> 
+<ns1:PropertyName>PATRONYMIC</ns1:PropertyName> 
+<ns1:PropertyValue>444</ns1:PropertyValue> 
+</ns1:Property> 
+<ns1:Property> 
+<ns1:PropertyName>BIRTH_DATE_TYPE</ns1:PropertyName> 
+<ns1:PropertyValue>555</ns1:PropertyValue> 
+</ns1:Property> 
+<ns1:Property> 
+<ns1:PropertyName>BIRTH_DATE</ns1:PropertyName> 
+<ns1:PropertyValue>1986-09-20</ns1:PropertyValue> 
+</ns1:Property> 
+<ns1:Property> 
+<ns1:PropertyName>GENDER</ns1:PropertyName> 
+<ns1:PropertyValue>666</ns1:PropertyValue> 
+</ns1:Property> 
+<ns1:Property></ns1:Property>
+</ns1:Properties> 
+</ns0:AppData> 
+</ns0:MessageData> 
+</Process> 
+</SOAP-ENV:Body> 
+</SOAP-ENV:Envelope>
